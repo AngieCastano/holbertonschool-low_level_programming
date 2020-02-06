@@ -1,0 +1,1 @@
+This is about learning how to code in c
