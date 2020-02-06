@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - main function
- * Result: Succes(0) - Error(1)
+ * Return: Succes(0) - Error(1)
  */
 int  main(void)
 {
