@@ -1,7 +1,8 @@
-#ifndef HEADER_FILE
-#define HEADER_FILE
+#ifndef _HOLBERTON_H
+#define _HOLBRTON_H
 
 int _putchar(char c);
 void print_alphabet(void);
+void print_alphabet_x10(void);
 
 #endif
