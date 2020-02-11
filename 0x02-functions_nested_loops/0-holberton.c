@@ -7,4 +7,4 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-_putchar("Holberton")
+_putchar("Holberton\n")
