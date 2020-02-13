@@ -6,7 +6,7 @@
  * Return: if upper ot not
  */
 
-int _isupper(int c);
+int _isupper(int c)
 {
 	int d = 0;
 	if (c >= 'A' && c <= 'Z')
