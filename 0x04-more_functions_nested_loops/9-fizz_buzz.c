@@ -18,8 +18,10 @@ int main(void)
 			printf("FizzBuzz");
 		else
 			printf("%i", i);
-		putchar(' ');
+		if (i != 0)
+			putchar(' ');
 	}
 	putchar('\n');
 	return (0);
 }
+© 2020 GitHub, Inc.
