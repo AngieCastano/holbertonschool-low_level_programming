@@ -19,7 +19,8 @@ int main(void)
 		else
 			printf("%i", i);
 
-		putchar(' ');
+		if (i != 11)
+			putchar(' ');
 	}
 	putchar('\n');
 	return (0);
