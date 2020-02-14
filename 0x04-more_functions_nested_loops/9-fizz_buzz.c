@@ -1,3 +1,4 @@
+#include "holberton.h"
 #include <stdio.h>
 /**
  * main - Printing Buzz Fizz
@@ -19,7 +20,7 @@ int main(void)
 		else
 			printf("%i", i);
 
-		if (i != 100)
+		if (i < 100)
 			putchar(' ');
 	}
 	putchar('\n');
