@@ -18,8 +18,8 @@ int main(void)
 			printf("FizzBuzz");
 		else
 			printf("%i", i);
-		if (i != 0)
-			putchar(' ');
+
+		putchar(' ');
 	}
 	putchar('\n');
 	return (0);
