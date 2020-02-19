@@ -13,7 +13,7 @@ void rev_string(char *s)
 	{
 	}
 	final = final - 1;
-	for(inicio = 0; inicio <= final; inicio++)
+	for (inicio = 0; inicio <= final; inicio++)
 	{
 		c = s[inicio];
 		s[inicio] = s[final];
