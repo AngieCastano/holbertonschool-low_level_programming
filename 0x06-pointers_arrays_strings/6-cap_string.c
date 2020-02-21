@@ -14,6 +14,8 @@ char *cap_string(char *s)
 		{
 			if (s[i + 1] > 96 && s[i + 1] < 123 && s[i + 1])
 				s[i + 1] = s[i + 1] - 32;
+			if (s[i] == 9)
+				s[i] = 32;
 		}
 	}
 	return (s);
