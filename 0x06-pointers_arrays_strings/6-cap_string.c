@@ -18,8 +18,6 @@ char *cap_string(char *s)
 		{
 			if (s[i] == list[x] && s[i + 1] > 96 && s[i + 1] < 123)
 			{
-				if (s[i] == '\t')
-					s[i] = ' ';
 				s[i + 1] -= 32;
 			}
 		}
