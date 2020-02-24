@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-	int i, j, big, small, n = 1024, h = 1, potencia = 1;
+	int i, j, big, small, h = 1, potencia = 1;
 
 	if (n < 0)
 	{
