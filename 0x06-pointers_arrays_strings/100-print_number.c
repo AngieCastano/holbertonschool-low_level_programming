@@ -8,9 +8,12 @@ void print_number(int n)
 {
 	int i, j, big, small, h = 1, potencia = 1;
 
+	if (n == 0)
+		_putchar(48);
+
 	if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		n = n * -1;
 	}
 	for (i = 0; h != 0; i++)
@@ -24,6 +27,6 @@ void print_number(int n)
 		big = n / potencia;
 		small = big % 10;
 		potencia = potencia / 10;
-		putchar(small + 48);
+		_putchar(small + 48);
 	}
 }
