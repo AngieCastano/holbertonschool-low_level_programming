@@ -7,7 +7,8 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int long_of_s, long_of_c, i, j, match;
+	int long_of_s, long_of_c, i, j;
+	unsigned int match;
 
 	for (long_of_s = 0; s[long_of_s] != '\0'; long_of_s++)
 	{
