@@ -28,6 +28,7 @@ void print_number(int n)
 		big = n / potencia;
 		small = big % 10;
 		potencia = potencia / 10;
-		_putchar(small + 48);
+		if (small > 47 && small < 58)
+			_putchar(small + 48);
 	}
 }
