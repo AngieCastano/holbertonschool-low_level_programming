@@ -9,8 +9,9 @@ void print_number(int n)
 	int i, j, big, small, h = 1, potencia = 1;
 
 	if (n == 0)
+	{
 		_putchar(48);
-
+	}
 	if (n < 0)
 	{
 		_putchar('-');
