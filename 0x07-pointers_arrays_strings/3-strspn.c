@@ -7,18 +7,18 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int long_of_s, long_of_c, i, j;
-	unsigned int match;
+	unsigned int long_of_s, long_of_c, j;
+	unsigned int match = 0, i;
 
 	for (long_of_s = 0; s[long_of_s] != '\0'; long_of_s++)
 	{
 	}
-	for (long_of_c = 0; c[long_of_c] != '\0'; long_of_c++)
+	for (long_of_c = 0; accept[long_of_c] != '\0'; long_of_c++)
 	{
 	}
 	for (i = 0; i < long_of_s && i <= match; i++)
 	{
-		for (int j = 0; j < long_of_c; j++)
+		for (j = 0; j < long_of_c; j++)
 		{
 			if (s[i] == accept[j])
 			{
