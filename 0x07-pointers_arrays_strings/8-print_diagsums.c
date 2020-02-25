@@ -7,12 +7,24 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i, j, pendiente_neg = 0, pendiente_pos = 0;
+	int i, x, y, pendiente_neg = 0, pendiente_pos = 0;
 
-	for (i = 0; i < size * size; i + (size + 1))
-		pendiente_neg += a[i];
-	for (j = 0; j < size * size; j + (size -1))
-		pendiente_pos += a[j];
+	x = size + 1;
+	y = size - 1;
+
+	for (i = 0; i < size * size; i ++)
+	{
+		if (i == x)
+		{
+			x +=(size + 1);
+			pendiente_neg += a[i];
+		}
+		if (i == size - 1)
+		{
+			y += (size -1);
+			pendiente_pos += a[i];
+		}
+	}
 	print_number(pendiente_neg);
 	print_number(pendiente_pos);
 }
