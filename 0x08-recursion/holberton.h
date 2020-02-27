@@ -12,4 +12,5 @@ int _sqrt_recursion(int n);
 int _root(int x, int n);
 int is_prime_number(int n);
 int is_palindrome(char *s);
+int otra (int x, int n);
 #endif
