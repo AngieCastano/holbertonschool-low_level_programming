@@ -25,5 +25,5 @@ int _root(int x, int n)
 		return (-1);
 	else if (x > 0)
 		return (_root(--x, n));
-	return (0);
+	return (-1);
 }
