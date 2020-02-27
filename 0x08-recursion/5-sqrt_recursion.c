@@ -21,7 +21,7 @@ int _root(int x, int n)
 {
 	if (x * x == n)
 		return (x);
-	else if (x == 0)
+	else if (x <= 0)
 		return (-1);
 	else if (x > 0)
 		return (_root(--x, n));
