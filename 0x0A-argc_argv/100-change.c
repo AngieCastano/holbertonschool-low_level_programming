@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int a = 0, qnty = 0;;
+	int a = 0, qnty = 0;
 
 	if (argc != 2)
 	{
@@ -21,28 +21,27 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 	a = atoi(argv[1]);
-	if (a/ 25 >= 1 && a > 0)
+	if (a / 25 >= 1 && a > 0)
 	{
-		qnty += a / 25;
-		a -= (a / 25) * 25;
+		qnty += a / 25, a -= (a / 25) * 25;
 	}
-	if (a/ 10 >= 1 && a > 0)
+	if (a / 10 >= 1 && a > 0)
 	{
 		qnty += a / 10;
 		a -= (a / 10) * 10;
 	}
-	if (a/ 5 >= 1 && a > 0)
+	if (a / 5 >= 1 && a > 0)
 	{
 		qnty += a / 5;
 		a -= (a / 5) * 5;
 	}
-	if (a/ 2 >= 1 && a > 0)
+	if (a / 2 >= 1 && a > 0)
 	{
 		qnty += a / 2;
 		a -= (a / 2) * 2;
 
 	}
-	if (a/ 1 >= 1 && a > 0)
+	if (a / 1 >= 1 && a > 0)
 	{
 		qnty += a / 1;
 		a -= (a / 1) * 1;
