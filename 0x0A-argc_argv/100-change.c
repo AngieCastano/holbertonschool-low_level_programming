@@ -46,6 +46,6 @@ int main(int argc, char *argv[])
 		qnty += a / 1;
 		a -= (a / 1) * 1;
 	}
-		printf("%d", qnty);
+		printf("%d\n", qnty);
 	return (0);
 }
