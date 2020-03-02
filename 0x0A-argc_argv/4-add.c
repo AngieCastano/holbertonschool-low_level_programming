@@ -29,7 +29,7 @@ int _isdigit(char *c)
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0, d = 1;
+	int i, sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
