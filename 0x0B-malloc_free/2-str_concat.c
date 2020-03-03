@@ -1,4 +1,4 @@
-#include "holberton.h"
+≥#include "holberton.h"
 #include <stdlib.h>
 /**
  * str_concat - concatenates two strings
@@ -8,7 +8,7 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i, j;
+	int i = 0, j = 0;
 	char *s;
 
 	if (s1 == NULL)
