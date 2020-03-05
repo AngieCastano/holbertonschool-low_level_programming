@@ -12,6 +12,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int i, j, k;
 	char *concatenated;
 
+	i = 0;
 	for (i = 0; s1[i]; i++)
 	{
 	}
