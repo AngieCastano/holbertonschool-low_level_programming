@@ -1,1 +1,1 @@
-This is about functions
+This is about functions.
