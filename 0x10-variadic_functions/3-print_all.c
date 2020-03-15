@@ -24,15 +24,15 @@ void print_int (va_list a)
  */
 void print_float (va_list a)
 {
-        printf("%f", va_arg(a, double));
+	printf("%f", va_arg(a, double));
 }
 /**
  * print_string - print_string
  * @a: to print
  */
-void print_string (va_list a)
+void print_string(va_list a)
 {
-        printf("%s", va_arg(a, char * ));
+	printf("%s", va_arg(a, char *));
 }
 
 /**
@@ -49,7 +49,7 @@ void print_all(const char * const format, ...)
 		{'f', print_float},
 		{'s', print_string}
 	};
-	va_start (args, format);
+	va_start(args, format);
 	i = 0;
 	while (format && format[i])
 	{
