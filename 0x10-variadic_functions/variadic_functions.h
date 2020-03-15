@@ -2,6 +2,7 @@
 #define _HEADER_FILE_
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * struct ch_fmt - sees if the format matches
  * @c: the char of the format

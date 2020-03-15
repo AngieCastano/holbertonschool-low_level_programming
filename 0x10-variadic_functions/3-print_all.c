@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * print_char - print_char
  * @a: to print
@@ -60,12 +61,11 @@ void print_all(const char * const format, ...)
 				match[j].f(args);
 				if (format[i + 1])
 					printf(", ");
-				else
-					printf("\n");
 			}
 			j++;
 		}
 	i++;
 	}
+	printf("\n");
 	va_end(args);
 }
