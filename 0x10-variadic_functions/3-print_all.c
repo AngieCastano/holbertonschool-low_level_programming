@@ -32,35 +32,42 @@ void print_float (va_list a)
  */
 void print_string(va_list a)
 {
-	printf("%s", va_arg(a, char *));
+	char *s = va_arg(a, char *);
+
+	if (s != NULL)
+		printf("%s", s);
+	else
+		printf("(nil)");
 }
 
 /**
- * pint_all - prints char
+ * print_all - prints char
  * @format: tipe of format to print
  */
 void print_all(const char * const format, ...)
 {
 	int i, j;
 	va_list args;
+	char *colon = "";
 	fmt_type match[] = {
 		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
-		{'s', print_string}
+		{'s', print_string},
+		{'\0', NULL}
 	};
 	va_start(args, format);
 	i = 0;
 	while (format && format[i])
 	{
 		j = 0;
-		while (j < 4)
+		while (match[j].c)
 		{
 			if (format[i] ==  match[j].c)
 			{
+				printf("%s", colon);
 				match[j].f(args);
-				if (format[i + 1])
-					printf(", ");
+				colon = ", ";
 			}
 			j++;
 		}
