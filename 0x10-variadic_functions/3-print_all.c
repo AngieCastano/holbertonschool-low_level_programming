@@ -33,11 +33,14 @@ void print_float (va_list a)
 void print_string(va_list a)
 {
 	char *s = va_arg(a, char *);
-	printf("%s", s);
+	if (s)
+		printf("%s", s);
+	else
+		printf("(nil)");
 }
 
 /**
- * print_all - prints char
+x * print_all - prints char
  * @format: tipe of format to print
  */
 void print_all(const char * const format, ...)
