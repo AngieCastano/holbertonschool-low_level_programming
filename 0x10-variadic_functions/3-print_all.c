@@ -33,11 +33,7 @@ void print_float (va_list a)
 void print_string(va_list a)
 {
 	char *s = va_arg(a, char *);
-
-	if (s != NULL)
-		printf("%s", s);
-	else
-		printf("(nil)");
+	printf("%s", s);
 }
 
 /**
@@ -48,7 +44,6 @@ void print_all(const char * const format, ...)
 {
 	int i, j;
 	va_list args;
-	char *colon = "";
 	fmt_type match[] = {
 		{'c', print_char},
 		{'i', print_int},
@@ -65,9 +60,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] ==  match[j].c)
 			{
-				printf("%s", colon);
 				match[j].f(args);
-				colon = ", ";
+				if (format[i + 1])
+					printf(", ");
 			}
 			j++;
 		}
