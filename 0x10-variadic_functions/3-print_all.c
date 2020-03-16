@@ -45,6 +45,7 @@ x * print_all - prints char
 void print_all(const char * const format, ...)
 {
 	int i, j;
+	char *colon = "";
 	va_list args;
 	fmt_type match[] = {
 		{'c', print_char},
@@ -62,8 +63,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] ==  match[j].c)
 			{
+				printf("%s", colon);
 				match[j].f(args);
-					printf(", ");
+				colon = ", ";
 			}
 			j++;
 		}
