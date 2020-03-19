@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * print_list -
+ * list_len - Returns number of elements of the string
  * @h: header of the list
  * Return: number of elements of the string
  */
-size_t print_list(const list_t *h)
+size_t list_len(const list_t *h)
 {
 	size_t num_of_lists = 0;
 
