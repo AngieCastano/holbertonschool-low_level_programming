@@ -1,37 +1,38 @@
 #include "lists.h"
-
+#include <string.h>
+#include <stdlib.h>
 /**
- * add_node_end - adds a node at the end of the list
- * @head: head of the string
- * @str: string to concatenate
- * Return: the address to the new element
+ * add_node_end - add a new node
+ * @head: the head of the linked list
+ * @str: the new string
+ * Return: the head
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new_end_list;
-	int i;
-	list_t *temp = *head;
+	char *ptr = strdup(str);
+	unsigned int i = 0;
+	list_t *new = malloc(sizeof(list_t)), *last = NULL;
 
-	new_end_list = malloc(sizeof(list_t));
-	if (!new_end_list)
+	if (!new)
 		return (NULL);
-	new_end_list->str = strdup(str);
-	for (i = 0; str[i]; i++)
+
+
+	while (*str)
 	{
+		i++, str++;
 	}
-	new_end_list->len = i;
-	new_end_list->next = NULL;
-	if (!*head)
-	{
-		*head = new_end_list;
-	}
+	new->str = ptr;
+	new->len = i;
+	new->next = NULL;
+
+	last = *head;
+	if (!last)
+		*head = new;
 	else
 	{
-		while (temp && temp->next)
-		{
-			temp = temp->next;
-		}
-		temp->next = new_end_list;
+		while (last->next)
+			last = last->next;
+		last->next = new;
 	}
 	return (*head);
 }
