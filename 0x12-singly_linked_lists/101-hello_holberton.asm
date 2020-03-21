@@ -4,9 +4,9 @@
 
 	section .text
 	extern printf
-	global _start
+	global main
 
-_start:
+main:
 	push	rbp
 	mov	rsi, msg
 	mov	rdi, fmt
