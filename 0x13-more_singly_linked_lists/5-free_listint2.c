@@ -9,9 +9,9 @@ void free_listint2(listint_t **head)
 	listint_t *copy_head, *puntero_head;
 
 	puntero_head = *head;
-	*head = NULL;
 	if (head)
 	{
+		*head = NULL;
 		while (puntero_head)
 		{
 			copy_head = puntero_head->next;
