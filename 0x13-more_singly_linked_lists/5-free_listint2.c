@@ -6,17 +6,16 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *copy_head, *puntero_head;
+	listint_t *next_head;
 
-	puntero_head = *head;
-	if (head)
+	while ((head || (*head)) && (*head)->next)
 	{
-		*head = NULL;
-		while (puntero_head)
-		{
-			copy_head = puntero_head->next;
-			free(puntero_head);
-			puntero_head = copy_head;
-		}
+		next_head = (*head)->next;
+		free(*head);
+		*head = next_head;
+	}
+	if (!(*head)->next)
+	{
+		free(*head);
 	}
 }
