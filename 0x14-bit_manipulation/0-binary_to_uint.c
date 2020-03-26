@@ -30,6 +30,8 @@ int _atoi(char const *s)
 
 	while (*s)
 	{
+		if (*s != '0' && *s != '1')
+			return (0);
 		char1 = *s;
 		ifdigit = _isdigit(char1);
 		if (ifdigit == 0)
