@@ -4,11 +4,11 @@
  * @n: to  covert to binary
  * Return: char
  */
-char *return_binary(int n)
+char *return_binary(unsigned long int n)
 {
 	char *a;
 	int i = 0, base = 2;
-	int f = n;
+	unsigned long int f = n;
 
 	if (f == 0)
 	{
