@@ -57,9 +57,12 @@ int _atoi(char const *s)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int binary = _atoi(b);
+	int binary;
 	int base = 2, decimal = 0, potencia = 2;
 
+	if (!b)
+		return (0);
+	binary = _atoi(b);
 	decimal += (binary % 10);
 	binary /= 10;
 	while (binary != 0)
