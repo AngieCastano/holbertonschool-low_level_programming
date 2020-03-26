@@ -50,6 +50,5 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (!binary[index])
 		return (-1);
 	n = binary[index] - 48;
-	free (binary);
 	return (n);
 }
