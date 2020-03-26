@@ -7,7 +7,7 @@ void print_binaryrecursively(unsigned long int n)
 {
 	if (n > 1)
 	{
-		print_binaryrecursively(n >> 1);
+		print_binaryrecursively(n = n >> 1);
 		_putchar((n & 1) + 48);
 	}
 }
@@ -18,7 +18,7 @@ void print_binaryrecursively(unsigned long int n)
 void print_binary(unsigned long int n)
 {
 	if (n <= 0)
-		printf("%i", 0);
+		_putchar('0');
 	n *= 2;
 	if (n > 0)
 	{
