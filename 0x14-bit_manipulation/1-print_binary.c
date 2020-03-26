@@ -7,8 +7,8 @@ void print_binaryrecursively(unsigned long int n)
 {
 	if (n > 1)
 	{
-		print_binaryrecursively(n /= 2);
-		_putchar(n % 2 + 48);
+		print_binaryrecursively(n = (n & n) >> 1);
+		_putchar((n & 1) + 48);
 	}
 }
 /**
