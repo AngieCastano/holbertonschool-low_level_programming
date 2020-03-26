@@ -47,6 +47,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	char *binary;
 
 	binary = return_binary(n);
+	if (!binary[index])
+		return (-1);
 	n = binary[index] - 48;
 	return (n);
 }
