@@ -47,7 +47,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	char *binary;
 
 	binary = return_binary(n);
-	if (index >= (sizeof(iunsigned long int) * 8) - 1)
+	if (index >= (sizeof(unsigned long int) * 8) - 1)
 		return (-1);
 	if (!binary[index])
 		return (-1);
