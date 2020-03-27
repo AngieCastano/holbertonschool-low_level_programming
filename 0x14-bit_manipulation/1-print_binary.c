@@ -19,7 +19,7 @@ void print_binary(unsigned long int n)
 {
 	if (n <= 0)
 		_putchar('0');
-	n *= 2;
+	n = n << 1;
 	if (n > 0)
 	{
 		print_binaryrecursively(n);
