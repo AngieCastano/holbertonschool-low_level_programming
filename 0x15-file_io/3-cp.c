@@ -30,14 +30,15 @@ int main(int ac, char **av)
 			dprintf(2, "Error: Can't read from file %s\n", av[1]);
 			exit(98);
 		}
-		dprintf1 = dprintf(fd2, "%s", buf);
+		dprintf1 = write(fd2, buf, read1);
 		if (dprintf1 == -1)
 		{
 			dprintf(2, "Error: Can't write to %s\n", av[2]);
 			exit(99);
 		}
 	}
-	dprintf1 = dprintf(fd2, "%s", buf);
+	buf[1024] = '\n';
+	dprintf1 = write(fd2, buf, read1);
 	if (dprintf1 == -1)
 		dprintf(2, "Error: Can't write to %s\n", av[2]), exit(99);
 	close1 = close(fd1), close2 = close(fd2);
