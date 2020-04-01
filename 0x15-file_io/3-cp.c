@@ -32,11 +32,7 @@ int main(int ac, char **av)
 			exit(99);
 		}
 		read1 = read(fd1, buf, 1024);
-		if (read1)
-		{
-			fd2 = open(av[2], O_WRONLY | O_APPEND);
-			write1 = write(fd2, buf, read1);
-		}
+		fd2 = open(av[2], O_WRONLY | O_APPEND);
 	} while (read1 > 0);
 	if (close(fd1) == -1)
 	{
