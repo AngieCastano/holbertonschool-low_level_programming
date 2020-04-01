@@ -22,13 +22,15 @@ int main(int ac, char **av)
 	do {
 		if (read1 == -1 || fd1 == -1)
 		{
-			dprintf(2, "Error: Can't read from file %s\n", av[1]);
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", av[1]);
 			exit(98);
 		}
 		write1 = write(fd2, buf, read1);
 		if (write1 == -1 || fd2 == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", av[2]);
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", av[2]);
 			exit(99);
 		}
 		read1 = read(fd1, buf, 1024);
