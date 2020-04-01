@@ -12,7 +12,7 @@ int main(int ac, char **av)
 	char buf[1024];
 
 	if (ac != 3)
-		dprintf(2, "Usage: cp file_from file_to"), exit(97);
+		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
 	fd2 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd2 == -1)
 		dprintf(2, "Error: Can't write to %s\n", av[2]), exit(99);
