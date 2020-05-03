@@ -40,7 +40,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		copy->prev = new_node;
 		return (new_node);
 	}
-	else if (!copy->next)
+	else if (!copy->next && index == idx)
 	{
 		new_node->prev = copy, new_node->next = NULL;
 		copy->next = new_node;
