@@ -12,21 +12,22 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int index = 0;
 	dlistint_t *new_node = NULL, *copy = NULL, *copy_copy = NULL;
 
-	if (!h || (!*h && idx != 0))
+	if (h == NULL)
+		return (NULL);
+	if (*h == NULL && idx != 0)
 		return (NULL);
 	copy = *h;
 	while (copy && index != idx)
 		copy_copy = copy, copy = copy->next, index++;
 	if (idx == 0)
 	{
-		if (!*h)
+		new_node = create_node(n);
+		if (*h == NULL)
 		{
-			new_node = create_node(n);
 			new_node->next = NULL, new_node->prev = NULL;
 			*h = new_node;
 			return (new_node);
 		}
-		new_node = create_node(n);
 		new_node->next = *h, new_node->prev = NULL;
 		(*h)->prev = new_node, *h = new_node;
 		return (new_node);
@@ -45,10 +46,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		new_node->prev = copy_copy;
 		return (new_node);
 	}
-	else
-	{
 		return (NULL);
-	}
+
 }
 /**
  * create_node - creates a new node
