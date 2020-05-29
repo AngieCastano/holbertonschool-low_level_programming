@@ -14,7 +14,7 @@ void hash_table_delete(hash_table_t *ht)
 	{
 		if (ht->array[i])
 		{
-			free_listint2(&ht->array[i]);
+			free_list(&ht->array[i]);
 		}
 	}
 	free(ht->array);
@@ -25,10 +25,10 @@ void hash_table_delete(hash_table_t *ht)
 }
 
 /**
- * free_listint2 - frees a listint_t list.
- * @head: head of the list to free
+ * free_list -function that frees a list_t list.
+ * @head: head of the list
  */
-void free_listint2(hash_node_t **head)
+void free_list(hash_node_t **head)
 {
 	hash_node_t *next_head;
 
@@ -40,12 +40,10 @@ void free_listint2(hash_node_t **head)
 		free((*head)->key);
 		free((*head)->value);
 		free(*head);
-		printf("Free Nodo\n");
 		*head = next_head;
 	}
 	free((*head)->key);
 	free((*head)->value);
 	free(*head);
-	printf("Free head\n");
 	*head = NULL;
 }

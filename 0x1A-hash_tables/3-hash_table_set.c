@@ -68,7 +68,8 @@ int update_key(hash_node_t *head, const char *compare, const char *value)
 	{
 		if (strcmp(compare, head->key) == 0)
 		{
-			head->value = (char *) value;
+			free(head->value);
+			head->value = strdup((char *) value);
 			return (1);
 		}
 		head = head->next;
