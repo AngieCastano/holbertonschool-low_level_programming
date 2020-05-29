@@ -13,14 +13,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new;
 
 	if (!ht || !ht)
-		return (1);
+		return (0);
 	if (*key == '\0' || !key)
-		return (1);
+		return (0);
 	index = key_index((unsigned char *)key, ht->size);
 	new = add_nodeint_end(&ht->array[index], key, value);
 	if (new)
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }
 
 /**
