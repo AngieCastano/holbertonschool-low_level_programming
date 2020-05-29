@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		index = key_index((unsigned char *)key, ht->size);
 		copy = ht->array[index];
-		if (update_key(copy, key,value) == 1)
+		if (update_key(copy, key, value) == 1)
 			return (1);
 		new = add_nodeint(&ht->array[index], key, value);
 		if (new)
@@ -59,11 +59,12 @@ hash_node_t *add_nodeint(hash_node_t **head, const char *ke, const char *v)
  * update_key - looks if a key already exists
  * @head: list head t traverse
  * @compare: string to compare
+ * @value: value of the key
  * Return: 1 if it already exists, 0 if it doesn't
  */
 int update_key(hash_node_t *head, const char *compare, const char *value)
 {
-	while(head)
+	while (head)
 	{
 		if (strcmp(compare, head->key) == 0)
 		{
