@@ -18,9 +18,7 @@ void hash_table_delete(hash_table_t *ht)
 		}
 	}
 	free(ht->array);
-	printf("Free array\n");
 	free(ht);
-	printf("Free Hash Table\n");
 	ht = NULL;
 }
 
