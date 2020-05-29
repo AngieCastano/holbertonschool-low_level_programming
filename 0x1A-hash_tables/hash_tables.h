@@ -42,5 +42,6 @@ int update_key(hash_node_t *head, const char *compare, const char *value);
 char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht);
+void free_listint2(hash_node_t **head);
 
 #endif /* HASH_TABLES_H */
