@@ -14,7 +14,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	if (!sht)
 		return (NULL);
 	sht->size = size;
-	sht->array = calloc(size, sizeof(shash_table_t *));
+	sht->array = calloc(size, sizeof(shash_node_t *));
 	if (!sht->array)
 	{
 		free(sht);
@@ -44,11 +44,10 @@ int shash_table_set(shash_table_t *sht, const char *key, const char *value)
 		copy = sht->array[index];
 		if (sht_update_key(copy, key, value) == 1)
 			return (1);
-		new = add_nodesht(&sht->array[index], value);
+		new = add_nodesht(&sht->array[index], value, key);
 		if (new)
 		{
 			add_node_sl_print(&sht->shead, &sht->stail, new);
-			sht->shead->key = strdup(key);
 			return (1);
 		}
 	}
@@ -79,16 +78,17 @@ int sht_update_key(shash_node_t *head, const char *compare, const char *value)
  * add_nodesht - adds a new node at the beginning of a list
  * @head: head of the list
  * @v: value to add
+ * @k: key ti asign
  * Return: the address of the new element, or NULL if it failed
  */
-shash_node_t *add_nodesht(shash_node_t **head, const char *v)
+shash_node_t *add_nodesht(shash_node_t **head, const char *v, const char *k)
 {
 	shash_node_t *new;
 
 	new = malloc(sizeof(shash_node_t));
 	if (!new)
 		return (NULL);
-	new->key = NULL;
+	new->key = strdup(k);
 	new->value = strdup(v);
 	new->next = NULL;
 	if (head || *head)
