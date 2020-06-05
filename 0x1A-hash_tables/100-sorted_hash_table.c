@@ -108,20 +108,46 @@ shash_node_t *add_nodesht(shash_node_t **head, const char *v, const char *k)
  */
 void add_node_sl_print(shash_node_t **h, shash_node_t **tail, shash_node_t *n)
 {
-	n->snext = *h;
-	n->sprev = NULL;
+	shash_node_t *copy = *h;
+	int counter = 0;
+
+
 	if (!*h)
 	{
-		*h = n;
-		*tail = n;
+		n->sprev = NULL, *h = n, *tail = n;
 		(*tail)->snext = NULL;
 		return;
 	}
-	if (n->snext)
+	if (!copy->snext)
 	{
-		(*h)->sprev = n;
+		if (copy->key[0] < n->key[0])
+		{
+			n->sprev = copy, copy->snext = n;
+			n->snext = NULL, *tail = n;
+		}
+		else if (copy->key[0] > n->key[0])
+		{
+			n->snext = copy, n->sprev = NULL;
+			copy->sprev = n, copy->snext = NULL, *h = n;
+		}
+		return;
 	}
-	*h = n;
+	while (copy->key[0] < n->key[0] && copy->snext)
+		copy = copy->snext, counter++;
+	if (copy->key[0] > n->key[0])
+	{
+		n->sprev = copy->sprev, n->snext = copy;
+		if (copy->sprev)
+			copy->sprev->snext = n;
+		copy->sprev = n;
+		if (counter == 0)
+			*h = n;
+		return;
+	}
+	n->sprev = copy, n->snext = NULL;
+	copy->snext = n, *tail = n;
+	if (counter == 0)
+		*h = n;
 }
 /**
  * shash_table_get - function that retrieves a value associated with a key.
