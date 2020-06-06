@@ -111,7 +111,6 @@ void add_node_sl_print(shash_node_t **h, shash_node_t **tail, shash_node_t *n)
 	shash_node_t *copy = *h;
 	int counter = 0;
 
-
 	if (!*h)
 	{
 		n->sprev = NULL, *h = n, *tail = n;
@@ -120,21 +119,21 @@ void add_node_sl_print(shash_node_t **h, shash_node_t **tail, shash_node_t *n)
 	}
 	if (!copy->snext)
 	{
-		if (copy->key[0] < n->key[0])
+		if (strcmp(copy->key, n->key) < 0)
 		{
 			n->sprev = copy, copy->snext = n;
 			n->snext = NULL, *tail = n;
 		}
-		else if (copy->key[0] > n->key[0])
+		else if (strcmp(copy->key, n->key) > 0)
 		{
 			n->snext = copy, n->sprev = NULL;
 			copy->sprev = n, copy->snext = NULL, *h = n;
 		}
 		return;
 	}
-	while (copy->key[0] < n->key[0] && copy->snext)
+	while (strcmp(copy->key, n->key) < 0 && copy->snext)
 		copy = copy->snext, counter++;
-	if (copy->key[0] > n->key[0])
+	if (strcmp(copy->key, n->key) > 0)
 	{
 		n->sprev = copy->sprev, n->snext = copy;
 		if (copy->sprev)
